@@ -8,6 +8,7 @@ public class Tic  extends Thread{
 			if (Sincronizador.getEstado()==0) {
 				System.out.println("Tic");
 				Sincronizador.setEstado(1);
+				
 			}
 		}
 	}
