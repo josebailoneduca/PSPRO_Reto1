@@ -1,0 +1,5 @@
+RETO 1
+0)Hacer tic tac con 2 hilos
+A)Sincronizar el tic y tac
+B)Grupo TIC y grupo TAC con 2 hebras por grupo y sincronizar tic y tac
+C)Hacer lo mismo pero con TIC, TAC, TOC
