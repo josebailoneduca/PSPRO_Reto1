@@ -1,14 +1,14 @@
-package tictac_sincronizadoGrupos;
+package tictactoc_sincronizadoGrupos;
 
 public class Tic  extends Thread{
 	@Override
 	public void run() {
 		while (true) {
+			//comprueba si es su turno
 			if (Sincronizador.getNombreTurno().equals(currentThread().getName())) {
 				System.out.println("Tic");
-				Sincronizador.avanzaEstado();
-
-				
+				//ordena al sincronizador que pase al siguiente
+				Sincronizador.siguiente();
 			}
 		}
 	}

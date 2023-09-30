@@ -1,14 +1,28 @@
 package tictac_sincronizadoGrupos;
 
-public class Sincronizador {
-	private static int estado=0;
 
-	public static int getEstado() {
-		return estado;
+public class Sincronizador {
+	private static String turno="Tic1";
+	
+	public static String getNombreTurno() {
+		return turno;
 	}
 
-	public static void setEstado(int estado) {
-		Sincronizador.estado = estado;
+	public static void avanzaEstado() {
+		switch (turno) {
+		case "Tic1":
+			turno="Tac1";
+			break;
+		case "Tac1":
+			turno="Tic2";
+			break;
+		case "Tic2":
+			turno="Tac2";
+			break;
+		case "Tac2":
+			turno="Tic1";
+			break;
+			}		
 	}
 
 }

@@ -1,7 +1,5 @@
 package tictac_sincronizadoGrupos;
-
-import tictac_sincronizado.Tac;
-import tictac_sincronizado.Tic;
+ 
 
 public class MainTicTacSincronizadoGrupos {
 	
@@ -11,12 +9,14 @@ public class MainTicTacSincronizadoGrupos {
 		Tac tac = new Tac();
 		ThreadGroup grupoTic = new ThreadGroup("grupoTic");
 		ThreadGroup grupoTac = new ThreadGroup("grupoTac");
-		Thread tic1=new Thread(grupoTic, tic, "Tick1");
-		Thread tic2=new Thread(grupoTic, tic, "Tick2");
-		Thread tac1=new Thread(grupoTac, tac, "Tack1");
-		Thread tac2=new Thread(grupoTac, tac, "Tack2");
-		tic.start();
-		tac.start();
+		Thread tic1=new Thread(grupoTic, tic, "Tic1");
+		Thread tic2=new Thread(grupoTic, tic, "Tic2");
+		Thread tac1=new Thread(grupoTac, tac, "Tac1");
+		Thread tac2=new Thread(grupoTac, tac, "Tac2");
+		tic1.start();
+		tic2.start();
+		tac1.start();
+		tac2.start();
 		System.out.println("Fin de main");
 	}
 
