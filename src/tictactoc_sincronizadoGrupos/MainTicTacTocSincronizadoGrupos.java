@@ -30,21 +30,21 @@ public class MainTicTacTocSincronizadoGrupos {
 		Thread toc3=new Thread(grupoToc, toc, "Toc3");
 		
 		//registrar los grupos en el sincronizador
-		Sincronizador.registrarGrupo(grupoTic);
-		Sincronizador.registrarGrupo(grupoTac);
-		Sincronizador.registrarGrupo(grupoToc);
+		Reloj.registrarGrupo(grupoTic);
+		Reloj.registrarGrupo(grupoTac);
+		Reloj.registrarGrupo(grupoToc);
 		
 		//registrar los hilos en el sincronizador
-		Sincronizador.registrarHilo(tic1);
-		Sincronizador.registrarHilo(tic2);
-		Sincronizador.registrarHilo(tac1);
-		Sincronizador.registrarHilo(tac2);
-		Sincronizador.registrarHilo(toc1);
-		Sincronizador.registrarHilo(toc2);
-		Sincronizador.registrarHilo(toc3);
+		Reloj.registrarHilo(tic1);
+		Reloj.registrarHilo(tic2);
+		Reloj.registrarHilo(tac1);
+		Reloj.registrarHilo(tac2);
+		Reloj.registrarHilo(toc1);
+		Reloj.registrarHilo(toc2);
+		Reloj.registrarHilo(toc3);
 		
 		//iniciar el sincronizador
-		Sincronizador.siguiente();
+		Reloj.siguiente();
 		
 		//iniciar los hilos
 		tic1.start();

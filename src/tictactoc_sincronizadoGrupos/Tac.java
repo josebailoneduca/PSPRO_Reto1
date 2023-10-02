@@ -6,10 +6,10 @@ public class Tac  extends Thread{
 	public void run() {
 		while (true) {
 			//comprueba si es su turno
-			if (Sincronizador.getNombreTurno().equals(currentThread().getName())) {
+			if (Reloj.getNombreTurno().equals(currentThread().getName())) {
 				System.out.println("Tac");
 				//ordena al sincronizador que pase al siguiente
-				Sincronizador.siguiente();
+				Reloj.siguiente();
 			}
 		}
 	}

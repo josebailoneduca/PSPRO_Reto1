@@ -14,7 +14,7 @@ import tictactoc_sincronizadoGrupos.listadoblecircular.ListaDobleCircular;
  * 
  * 
  */
-public class Sincronizador {
+public class Reloj {
 	
 	/**
 	 * Hilo al que pertenece actualmente el turno
@@ -24,7 +24,7 @@ public class Sincronizador {
 	/**
 	 * Lista circular que contiene un sincronizador de turnos de hilo para cada grupo
 	 */
-	private static ListaDobleCircular<SincronizadorHilosDeGrupo> grupos = new ListaDobleCircular<SincronizadorHilosDeGrupo>();
+	private static ListaDobleCircular<RelojHilosDeGrupo> grupos = new ListaDobleCircular<RelojHilosDeGrupo>();
 	
 	
 	/**
@@ -49,7 +49,7 @@ public class Sincronizador {
 	 * @param grupo El grupo a registrar
 	 */
 	public static void registrarGrupo(ThreadGroup grupo) {
-		grupos.addLast(new SincronizadorHilosDeGrupo(grupo));
+		grupos.addLast(new RelojHilosDeGrupo(grupo));
 		grupos.getLast();
 	}
 
@@ -65,7 +65,7 @@ public class Sincronizador {
 		ThreadGroup grupo = hilo.getThreadGroup();
 		//busca el sincronizador que pertenece al grupo del hilo entre los grupos registrados y si lo encuentra lo agrega
 		for (int i=0;i<grupos.size();i++) {
-			SincronizadorHilosDeGrupo sActual = grupos.getAt(i);
+			RelojHilosDeGrupo sActual = grupos.getAt(i);
 			if (sActual.getGrupo().equals(grupo)) {
 				sActual.registrarHilo(hilo);
 				return true;

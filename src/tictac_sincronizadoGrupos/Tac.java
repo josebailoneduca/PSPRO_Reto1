@@ -5,9 +5,9 @@ public class Tac  extends Thread{
 	@Override
 	public void run() {
 		while (true) {
-			if (Sincronizador.getNombreTurno().equals(currentThread().getName())) {
+			if (Reloj.getNombreTurno().equals(currentThread().getName())) {
 				System.out.println("Tac");
-				Sincronizador.avanzaEstado();
+				Reloj.avanzaEstado();
 			}
 		}
 	}

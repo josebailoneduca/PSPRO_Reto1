@@ -1,7 +1,7 @@
 package tictac_sincronizadoGrupos;
 
 
-public class Sincronizador {
+public class Reloj {
 	private static String turno="Tic1";
 	
 	public static String getNombreTurno() {

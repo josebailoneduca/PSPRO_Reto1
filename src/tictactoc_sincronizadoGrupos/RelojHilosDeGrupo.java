@@ -6,7 +6,7 @@ import tictactoc_sincronizadoGrupos.listadoblecircular.ListaDobleCircular;
  * Sincroniza el hilo el del grupo al que le corresponde el turno asignado al
  * grupo
  */
-public class SincronizadorHilosDeGrupo extends ListaDobleCircular<Thread> {
+public class RelojHilosDeGrupo extends ListaDobleCircular<Thread> {
 
 	/**
 	 * Grupo al que se refiere el sincronizador
@@ -18,7 +18,7 @@ public class SincronizadorHilosDeGrupo extends ListaDobleCircular<Thread> {
 	 * 
 	 * @param grupo El grupo al que se refiere el sincronizador
 	 */
-	public SincronizadorHilosDeGrupo(ThreadGroup grupo) {
+	public RelojHilosDeGrupo(ThreadGroup grupo) {
 		this.grupo = grupo;
 	}
 
