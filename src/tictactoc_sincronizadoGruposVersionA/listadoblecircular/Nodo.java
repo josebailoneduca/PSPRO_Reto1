@@ -1,4 +1,4 @@
-package tictactoc_sincronizadoGrupos.listadoblecircular;
+package tictactoc_sincronizadoGruposVersionA.listadoblecircular;
 
 public class Nodo <T> {
 	private T contenido;

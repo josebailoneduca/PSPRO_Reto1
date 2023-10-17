@@ -1,6 +1,6 @@
-package tictactoc_sincronizadoGrupos;
+package tictactoc_sincronizadoGruposVersionA;
 
-import tictactoc_sincronizadoGrupos.listadoblecircular.ListaDobleCircular;
+import tictactoc_sincronizadoGruposVersionA.listadoblecircular.ListaDobleCircular;
 
 /**
  * Sincroniza el hilo el del grupo al que le corresponde el turno asignado al

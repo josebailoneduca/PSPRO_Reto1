@@ -1,4 +1,4 @@
-package tictactoc_sincronizadoGrupos;
+package tictactoc_sincronizadoGruposVersionA;
 
 public class Toc  extends Thread{
  

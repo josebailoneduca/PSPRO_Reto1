@@ -1,7 +1,7 @@
 package tictac_sincronizado;
 
 public class Reloj {
-	private static int estado=0;
+	private static int estado = 0;
 
 	public static int getEstado() {
 		try {
@@ -15,12 +15,6 @@ public class Reloj {
 
 	public static void setEstado(int estado) {
 		Reloj.estado = estado;
-		try {
-			Thread.sleep(1);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		Thread.yield();
 	}
-
 }

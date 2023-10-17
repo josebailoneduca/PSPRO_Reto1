@@ -1,4 +1,4 @@
-package tictactoc_sincronizadoGrupos;
+package tictactoc_sincronizadoGruposVersionA;
  
 /**
  * Clase inicio del programa. 

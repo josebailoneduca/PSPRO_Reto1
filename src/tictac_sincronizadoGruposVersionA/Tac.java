@@ -1,4 +1,4 @@
-package tictac_sincronizadoGrupos;
+package tictac_sincronizadoGruposVersionA;
 
 public class Tac  extends Thread{
  
