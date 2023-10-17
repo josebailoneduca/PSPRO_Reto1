@@ -1,7 +1,7 @@
-package tictac_sincronizadoGrupos;
+package tictac_sincronizadoGruposVersionA;
  
 
-public class MainTicTacSincronizadoGrupos {
+public class MainTicTacSincronizadoGruposVersionA{
 	
 	public static void main(String[] args) {
 		System.out.println("Inicio de main TIC-TAC SICRONIZADO GRUPOS");
