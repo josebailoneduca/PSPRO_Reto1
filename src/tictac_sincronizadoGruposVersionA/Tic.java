@@ -1,5 +1,8 @@
 package tictac_sincronizadoGruposVersionA;
 
+/**
+ * Escribe Tic en pantalla cuando le toca
+ */
 public class Tic  extends Thread{
 	@Override
 	public void run() {

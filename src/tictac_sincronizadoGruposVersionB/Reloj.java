@@ -1,20 +1,35 @@
 package tictac_sincronizadoGruposVersionB;
 
 
+/**
+ * Define el turno de los grupos
+ */
 public class Reloj {
-	private static int turno=0;
 	
-	public static int getTurno() {
+	/**
+	 * Nombre del grupo al que le toca el turno
+	 */
+	private static String turno="grupoTic";
+	
+	/**
+	 * Devuelve el turno actual
+	 * 
+	 * @return El turno actual
+	 */
+	public static String getTurno() {
 		return turno;
 	}
 
-	public static void avanzaEstado() {
+	/**
+	 * Avanza en la secuencia de turnos
+	 */
+	public static void avanzaTurno() {
 		switch (turno) {
-		case 0:
-			turno=1;
+		case "grupoTic":
+			turno="grupoTac";
 			break;
 		default :
-			turno=0;
+			turno="grupoTic";
 			}		
 	}
 

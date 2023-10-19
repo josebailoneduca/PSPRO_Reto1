@@ -1,6 +1,11 @@
 package tictac_sincronizadoGruposVersionA;
  
 
+/**
+ * Sincronizacion con turnos estrictos establecidos mediante la clase Reloj.
+ * Para ver una solucion en la que los hijos de cada grupo compiten entre si 
+ * sin turnos estrictos ver la version: tictac_sincronizadoGruposVersionB
+ */
 public class MainTicTacSincronizadoGruposVersionA{
 	
 	public static void main(String[] args) {

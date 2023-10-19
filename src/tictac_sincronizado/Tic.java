@@ -8,7 +8,6 @@ public class Tic  extends Thread{
 			if (Reloj.getEstado()==0) {
 				System.out.println("Tic");
 				Reloj.setEstado(1);
-				
 			}
 		}
 	}
