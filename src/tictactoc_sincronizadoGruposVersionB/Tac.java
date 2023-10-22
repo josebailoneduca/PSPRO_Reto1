@@ -1,12 +1,12 @@
-package tictac_sincronizadoGruposVersionB;
+package tictactoc_sincronizadoGruposVersionB;
 
 /**
- * Escribe Tic en pantalla cuando le toca el turno a su grupo.
+ * Escribe Tac cuando le toca el turno a su grupo.
  * Compite entre hebras del mismo grupo usando una version
  * simplifica de Dekker sin contemplar el turno de hebra
  * ya que eso supondria alternancia estricta entre ambas hebras del grupo
  */
-public class Tic  extends Thread{
+public class Tac  extends Thread{
 	/**
 	 * Variable estatica con un array de banderas para la implementacion de una version
 	 * simplificada de Dekker
@@ -20,14 +20,14 @@ public class Tic  extends Thread{
 	
 	/**
 	 * Constructor
-	 * @param id Indice de bandera
+	 * @param id Indice usado como bandera
 	 */
-	public Tic(int id) {
+	public Tac(int id) {
 		this.id=id;
 	}
 	
 	/**
-	 * Carrera de la hebra
+	 * Carrera del hilo
 	 */
 	@Override
 	public void run() {
@@ -37,11 +37,10 @@ public class Tic  extends Thread{
 				
 				//implementacion simplificada de Dekker para gestionar el acceso a la seccion critica	
 			
-				//subir bandera propia
+				//subir la bandera propia
  				banderas[id] = true;
- 				
  				//Espera ocupada si la bandera del otro esta levantada o el grupo que tiene turno no es el propio
-				while (Tic.banderas[(id==0)?1:0] || !Reloj.getTurno().equals(Thread.currentThread().getThreadGroup().getName())) {
+				while (Tac.banderas[(id==0)?1:0] || !Reloj.getTurno().equals(Thread.currentThread().getThreadGroup().getName())) {
 					
 					//bajar la bandera propia
 					banderas[id]=false;
@@ -54,7 +53,7 @@ public class Tic  extends Thread{
 				//inicio seccioncritica>>
 				
 				//imprimir
-				System.out.println("Tic");
+				System.out.println("Tac");
 				//cambiar el turno de reloj
 				Reloj.avanzaTurno();
 				
@@ -64,5 +63,5 @@ public class Tic  extends Thread{
 				banderas[id] = false;
 				
 		}//fin de bucle infinito
-	}//fin de run
-}//fin de clase
+	}
+}

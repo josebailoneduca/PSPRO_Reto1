@@ -27,7 +27,7 @@ public class MainTicTacTocSincronizadoGrupos {
 		Thread tac2=new Thread(grupoTac, tac, "Tac2");
 		Thread toc1=new Thread(grupoToc, toc, "Toc1");
 		Thread toc2=new Thread(grupoToc, toc, "Toc2");
-		Thread toc3=new Thread(grupoToc, toc, "Toc3");
+
 		
 		//registrar los grupos en el sincronizador
 		Reloj.registrarGrupo(grupoTic);
@@ -41,7 +41,7 @@ public class MainTicTacTocSincronizadoGrupos {
 		Reloj.registrarHilo(tac2);
 		Reloj.registrarHilo(toc1);
 		Reloj.registrarHilo(toc2);
-		Reloj.registrarHilo(toc3);
+
 		
 		//iniciar el sincronizador
 		Reloj.siguiente();
@@ -53,7 +53,6 @@ public class MainTicTacTocSincronizadoGrupos {
 		tac2.start();
 		toc1.start();
 		toc2.start();
-		toc3.start();
 		
 		System.out.println("Fin de main");
 	}
