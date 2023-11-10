@@ -1,33 +1,43 @@
-package tictactoc_sincronizadoGruposVersionB;
+package tictac_grupos;
 
 /**
- * Escribe Toc cuando le toca el turno a su grupo.
+ * Escribe un sonido en pantalla cuando le toca el turno a su grupo.
  * Compite entre hebras del mismo grupo usando una version
- * simplifica de Dekker sin contemplar el turno de hebra
+ * simplificada de Dekker sin contemplar el turno de hebra
  * ya que eso supondria alternancia estricta entre ambas hebras del grupo
  */
-public class Toc  extends Thread{
+public class PasoDeReloj  extends Thread{
 	/**
 	 * Variable estatica con un array de banderas para la implementacion de una version
 	 * simplificada de Dekker
 	 */
-	private static boolean[] banderas=new boolean[2];
+	private boolean[] banderas;
 	
 	/**
 	 * Id de su bandera
 	 */
-	int id=0;
+	int indice=0;
+	
+	/**
+	 * Sonido
+	 */
+	
+	String sonido;
+	
+	
 	
 	/**
 	 * Constructor
-	 * @param id Indice usado como bandera
+	 * @param indice Indice de bandera
 	 */
-	public Toc(int id) {
-		this.id=id;
+	public PasoDeReloj(int indice,boolean[] banderas,String sonido) {
+		this.indice=indice;
+		this.banderas=banderas;
+		this.sonido=sonido;
 	}
 	
 	/**
-	 * Carrera del hilo
+	 * Carrera de la hebra
 	 */
 	@Override
 	public void run() {
@@ -37,31 +47,36 @@ public class Toc  extends Thread{
 				
 				//implementacion simplificada de Dekker para gestionar el acceso a la seccion critica	
 			
-				//subir la bandera propia
- 				banderas[id] = true;
+				//subir bandera propia
+ 				banderas[indice] = true;
+ 				
  				//Espera ocupada si la bandera del otro esta levantada o el grupo que tiene turno no es el propio
-				while (Toc.banderas[(id==0)?1:0] || !Reloj.getTurno().equals(Thread.currentThread().getThreadGroup().getName())) {
+				while (this.banderas[(indice==0)?1:0] || !Reloj.getTurno().equals(Thread.currentThread().getThreadGroup().getName())) {
 					
 					//bajar la bandera propia
-					banderas[id]=false;
+					banderas[indice]=false;
 					//salir del procesador
 					Thread.yield();
 					//subir la bandera propia
-					banderas[id]=true;
+					banderas[indice]=true;
 				}
 				
 				//inicio seccioncritica>>
 				
 				//imprimir
-				System.out.println("Toc");
+				System.out.println(sonido);
 				//cambiar el turno de reloj
 				Reloj.avanzaTurno();
 				
 				//<<fin de seccion critica
 				
 				//bajar bandera propia
-				banderas[id] = false;
+				banderas[indice] = false;
 				
 		}//fin de bucle infinito
-	}
-}
+	}//fin de run
+	
+ 
+	
+	
+}//fin de clase
