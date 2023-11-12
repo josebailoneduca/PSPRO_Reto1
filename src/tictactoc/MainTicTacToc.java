@@ -2,9 +2,10 @@ package tictactoc;
 
 import java.util.Scanner;
 
-
 /**
  * Version de TicTacToc sincronizado con competicion entre hebras del mismo grupo.
+ * 
+ * @author Jose Javier Bailon Ortiz
  */
 public class MainTicTacToc {
 	
@@ -23,8 +24,7 @@ public class MainTicTacToc {
 		
 	
 		
-		System.out.println("Inicio de main TIC-TAC SICRONIZADO GRUPOS");
-		//hebras que participaran
+		// Creacion de las hebras y los arrays de banderas para mutex
 		boolean[]banderasTic=new boolean[2];
 		PasoDeReloj ti1 = new PasoDeReloj(0,banderasTic,"Tic");
 		PasoDeReloj ti2 = new PasoDeReloj(1,banderasTic,"Tic");
@@ -56,10 +56,6 @@ public class MainTicTacToc {
 		tac1.start();
 		tac2.start();
 		toc1.start();
-		toc2.start();
-		
-		System.out.println("Fin de main");
+		toc2.start();	
 	}
-
-
 }

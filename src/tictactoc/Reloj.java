@@ -2,6 +2,8 @@ package tictactoc;
 
 /**
  * Define el turno de los grupos
+ * 
+ * @author Jose Javier Bailon Ortiz
  */
 public class Reloj {
 

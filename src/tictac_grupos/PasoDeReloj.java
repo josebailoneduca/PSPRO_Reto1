@@ -5,11 +5,13 @@ package tictac_grupos;
  * Compite entre hebras del mismo grupo usando una version
  * simplificada de Dekker sin contemplar el turno de hebra
  * ya que eso supondria alternancia estricta entre ambas hebras del grupo
+ * 
+ * @author Jose Javier Bailon Ortiz
  */
 public class PasoDeReloj  extends Thread{
 	/**
-	 * Variable estatica con un array de banderas para la implementacion de una version
-	 * simplificada de Dekker
+	 * Array de banderas para la implementacion de una version
+	 * simplificada de Dekker.
 	 */
 	private boolean[] banderas;
 	
@@ -19,7 +21,7 @@ public class PasoDeReloj  extends Thread{
 	int indice=0;
 	
 	/**
-	 * Sonido
+	 * Palabra que imprimira el hilo cuando le toque imprimir
 	 */
 	
 	String sonido;
@@ -29,6 +31,8 @@ public class PasoDeReloj  extends Thread{
 	/**
 	 * Constructor
 	 * @param indice Indice de bandera
+	 * @param banderas Array para mutex
+	 * @param sonido Palabra a imprimir
 	 */
 	public PasoDeReloj(int indice,boolean[] banderas,String sonido) {
 		this.indice=indice;
